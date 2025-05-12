@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const slideNavMenu = document.querySelector('.slide-nav-menu');
     const menuItems = document.querySelectorAll('.slide-nav-menu li');
     
+    // Modal elements
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeModal = document.querySelector('.modal-close');
+    
     let currentSlideIndex = 0;
     const totalSlides = 38;
     
@@ -78,6 +83,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    // Make all images in slides clickable
+    const makeImagesClickable = () => {
+        // Find all images in slides (except for small icons)
+        const slidesImages = document.querySelectorAll('.visualization-image, .powerbi-image img, .tableau-image img, .sql-query-image-item img, .visualization-result img, .dataframe-output img, .finding-card img, .team-member-img img:not([width="100"]):not([height="100"])');
+        
+        slidesImages.forEach(img => {
+            // Add zoomable class to all images
+            img.classList.add('zoomable');
+            
+            // Add click event listener
+            img.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+            });
+        });
+    };
+    
+    // Close modal when X is clicked
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+    
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+    
     // Arrow key navigation
     document.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
@@ -93,8 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // End key goes to last slide
             showSlide(totalSlides - 1);
         } else if (event.key === 'Escape') {
-            // Escape key closes menu
-            closeMenu();
+            // Escape key closes menu or modal
+            if (modal.style.display === 'block') {
+                modal.style.display = 'none';
+            } else {
+                closeMenu();
+            }
         }
     });
     
@@ -133,4 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize with the first slide
     showSlide(0);
+    
+    // Make images clickable after a short delay to ensure all content is loaded
+    setTimeout(makeImagesClickable, 1000);
+    
+    // Also make images clickable when the page fully loads
+    window.onload = makeImagesClickable;
 }); 
