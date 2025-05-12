@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuItems = document.querySelectorAll('.slide-nav-menu li');
     
     let currentSlideIndex = 0;
-    const totalSlides = 41;
+    const totalSlides = 38;
     
     // Update slide counter display
     function updateSlideCounter() {
