@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Data - Data Analyst Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Data Analysis Project</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="team.html">Team Members</a></li>
+                <li><a href="python.html">Python Cleaning</a></li>
+                <li><a href="sql.html">SQL Analysis</a></li>
+                <li><a href="excel.html" class="active">Excel Data</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Excel Data Analysis</h2>
+        <p>This section presents the data from our Excel analysis.</p>
+        
+        <div class="code-container">
+            <h3>Dataset Overview</h3>
+            <p>The final project Excel dataset contains comprehensive sales data with the following key columns:</p>
+            <ul>
+                <li>Order information (ID, Date, Ship Date)</li>
+                <li>Customer details (ID, Name, Segment)</li>
+                <li>Geographic information (Country, City, State, Region)</li>
+                <li>Product details (ID, Category, Sub-Category, Name)</li>
+                <li>Sales figures</li>
+                <li>Additional derived fields from our analysis (Season, Order Day Name, etc.)</li>
+            </ul>
+        </div>
+
+        <div class="code-container">
+            <h3>Data Preview</h3>
+            <p>Here's a preview of the data structure in our Excel file:</p>
+            
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Order Date</th>
+                            <th>Ship Date</th>
+                            <th>Ship Mode</th>
+                            <th>Customer Name</th>
+                            <th>Segment</th>
+                            <th>Region</th>
+                            <th>Category</th>
+                            <th>Sub-Category</th>
+                            <th>Product Name</th>
+                            <th>Sales</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CA-2017-152156</td>
+                            <td>08/11/2017</td>
+                            <td>11/11/2017</td>
+                            <td>Second Class</td>
+                            <td>Claire Gute</td>
+                            <td>Consumer</td>
+                            <td>South</td>
+                            <td>Furniture</td>
+                            <td>Bookcases</td>
+                            <td>Bush Somerset Collection Bookcase</td>
+                            <td>261.96</td>
+                        </tr>
+                        <tr>
+                            <td>CA-2017-152156</td>
+                            <td>08/11/2017</td>
+                            <td>11/11/2017</td>
+                            <td>Second Class</td>
+                            <td>Claire Gute</td>
+                            <td>Consumer</td>
+                            <td>South</td>
+                            <td>Furniture</td>
+                            <td>Chairs</td>
+                            <td>Hon Deluxe Fabric Upholstered Stacking Chairs</td>
+                            <td>731.94</td>
+                        </tr>
+                        <tr>
+                            <td>CA-2017-138688</td>
+                            <td>12/06/2017</td>
+                            <td>16/06/2017</td>
+                            <td>Second Class</td>
+                            <td>Darrin Van Huff</td>
+                            <td>Corporate</td>
+                            <td>West</td>
+                            <td>Office Supplies</td>
+                            <td>Labels</td>
+                            <td>Self-Adhesive Address Labels for Typewriters</td>
+                            <td>14.62</td>
+                        </tr>
+                        <tr>
+                            <td>US-2016-108966</td>
+                            <td>11/10/2016</td>
+                            <td>18/10/2016</td>
+                            <td>Standard Class</td>
+                            <td>Sean O'Donnell</td>
+                            <td>Consumer</td>
+                            <td>South</td>
+                            <td>Furniture</td>
+                            <td>Tables</td>
+                            <td>Bretford CR4500 Series Slim Rectangular Table</td>
+                            <td>957.58</td>
+                        </tr>
+                        <tr>
+                            <td>US-2016-108966</td>
+                            <td>11/10/2016</td>
+                            <td>18/10/2016</td>
+                            <td>Standard Class</td>
+                            <td>Sean O'Donnell</td>
+                            <td>Consumer</td>
+                            <td>South</td>
+                            <td>Office Supplies</td>
+                            <td>Storage</td>
+                            <td>Eldon Fold 'N Roll Cart System</td>
+                            <td>22.37</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="code-container">
+            <h3>Key Findings from Excel Analysis</h3>
+            <div class="findings">
+                <div class="finding-card">
+                    <h4>Sales by Category</h4>
+                    <p>Office Supplies leads in sales volume, followed by Furniture and Technology.</p>
+                </div>
+                <div class="finding-card">
+                    <h4>Regional Performance</h4>
+                    <p>The West region contributes the highest revenue, followed by East, Central, and South.</p>
+                </div>
+                <div class="finding-card">
+                    <h4>Customer Segments</h4>
+                    <p>Consumer segment has the highest order volume, though Corporate generates more revenue per order on average.</p>
+                </div>
+                <div class="finding-card">
+                    <h4>Seasonal Trends</h4>
+                    <p>Q4 shows consistently higher sales across all product categories, likely due to holiday shopping.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="code-container">
+            <h3>Download Excel Data</h3>
+            <p>You can download the full Excel dataset for further analysis:</p>
+            <div class="download-links">
+                <a href="Excel/Final-project by Excel.csv" class="cta-button" download>Download CSV Data</a>
+                <a href="Excel/Copy of Final_excel_project(1).xlsx" class="cta-button" download>Download Excel Workbook</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Data Analysis Project Team</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Additional JavaScript for interactive data display could go here
+        });
+    </script>
+</body>
+</html> 

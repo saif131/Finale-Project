@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Cleaning Code - Data Analyst Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <header>
+        <h1>Data Analysis Project</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="team.html">Team Members</a></li>
+                <li><a href="python.html" class="active">Python Cleaning</a></li>
+                <li><a href="sql.html">SQL Analysis</a></li>
+                <li><a href="excel.html">Excel Data</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Python Data Cleaning</h2>
+        <p>This section shows the Python code used for cleaning and preparing our data for analysis.</p>
+        
+        <div class="code-container">
+            <h3>Data Import and Initial Analysis</h3>
+            <pre><code class="python">
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+df = pd.read_csv('Superstore Sales Dataset.csv')
+
+# Display the first few rows
+df.head()
+            </code></pre>
+        </div>
+
+        <div class="code-container">
+            <h3>Data Exploration</h3>
+            <p>The Python notebook performs data exploration to understand the structure and characteristics of the Superstore Sales Dataset.</p>
+            <p>The dataset contains the following columns:</p>
+            <ul>
+                <li>Row ID</li>
+                <li>Order ID</li>
+                <li>Order Date</li>
+                <li>Ship Date</li>
+                <li>Ship Mode</li>
+                <li>Customer ID</li>
+                <li>Customer Name</li>
+                <li>Segment</li>
+                <li>Country</li>
+                <li>City</li>
+                <li>State</li>
+                <li>Postal Code</li>
+                <li>Region</li>
+                <li>Product ID</li>
+                <li>Category</li>
+                <li>Sub-Category</li>
+                <li>Product Name</li>
+                <li>Sales</li>
+            </ul>
+        </div>
+        
+        <div class="code-container">
+            <h3>Data Cleaning Steps</h3>
+            <pre><code class="python">
+# Check for missing values
+df.isnull().sum()
+
+# Handle missing values
+# For numerical columns, fill with median
+for col in ['Sales', 'Postal Code']:
+    if df[col].isnull().any():
+        df[col] = df[col].fillna(df[col].median())
+
+# For categorical columns, fill with mode
+for col in ['Ship Mode', 'Country', 'City', 'State', 'Region']:
+    if df[col].isnull().any():
+        df[col] = df[col].fillna(df[col].mode()[0])
+
+# Convert date columns to datetime format
+df['Order Date'] = pd.to_datetime(df['Order Date'], format='%d/%m/%Y')
+df['Ship Date'] = pd.to_datetime(df['Ship Date'], format='%d/%m/%Y')
+
+# Add additional date-based features
+df['Order Year'] = df['Order Date'].dt.year
+df['Order Month'] = df['Order Date'].dt.month
+df['Order Month Name'] = df['Order Date'].dt.month_name()
+df['Order Day'] = df['Order Date'].dt.day
+df['Order Day Name'] = df['Order Date'].dt.day_name()
+
+# Add season of order
+def get_season(month):
+    if month in [12, 1, 2]:
+        return 'Winter'
+    elif month in [3, 4, 5]:
+        return 'Spring'
+    elif month in [6, 7, 8]:
+        return 'Summer'
+    else:
+        return 'Fall'
+        
+df['Season of Order'] = df['Order Month'].apply(get_season)
+
+# Calculate order to ship duration
+df['Order to Ship Duration'] = (df['Ship Date'] - df['Order Date']).dt.days
+
+# Categorize sales
+def categorize_sales(sales):
+    if sales < 100:
+        return 'Low'
+    elif sales < 500:
+        return 'Medium'
+    else:
+        return 'High'
+        
+df['Sales Category'] = df['Sales'].apply(categorize_sales)
+
+# Save cleaned dataset
+df.to_csv('Cleaned_Superstore_Sales.csv', index=False)
+            </code></pre>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Data Analysis Project Team</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</body>
+</html>

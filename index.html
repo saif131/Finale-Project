@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Project Presentation</title>
+    <link rel="stylesheet" href="slide-style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide Navigation Menu -->
+        <div class="slide-nav-menu">
+            <div class="menu-header">
+                <h3>Navigation</h3>
+                <button id="close-menu">×</button>
+            </div>
+            <ul>
+                <li data-slide="0">Title</li>
+                <li data-slide="1">Team Members</li>
+                <li data-slide="2">Project Overview</li>
+                <li data-slide="3">Tools We Use</li>
+                <li data-slide="4">Project Objectives</li>
+                
+                <!-- Python Cleaning Section -->
+                <li class="section-header">Python Cleaning</li>
+                <li data-slide="5">Python Cleaning</li>
+                <li data-slide="6">Python: Load and Explore Dataset</li>
+                <li data-slide="7">Python: Format Date Columns</li>
+                <li data-slide="8">Python Data Transformation</li>
+                
+                <!-- SQL Section -->
+                <li class="section-header">SQL Analysis</li>
+                <li data-slide="9">SQL Analysis</li>
+                <li data-slide="10">SQL Analysis Overview</li>
+                <li data-slide="11">SQL Query: Check Nulls</li>
+                <li data-slide="12">SQL Query: Duplicates</li>
+                <li data-slide="13">SQL Query: Sales by Region</li>
+                <li data-slide="14">SQL Query: Top Product</li>
+                <li data-slide="15">SQL Query: Seasonal Sales</li>
+                <li data-slide="16">SQL Query: Which Category is Performing</li>
+                <li data-slide="17">SQL Query: Which Sub-Category is Performing</li>
+                <li data-slide="18">SQL Query: Least Selling Product</li>
+                
+                <!-- Excel Section -->
+                <li class="section-header">Excel Analysis</li>
+                <li data-slide="19">Excel Analysis</li>
+                <li data-slide="20">Excel Data Analysis</li>
+                
+                <!-- Python Visualization Section -->
+                <li class="section-header">Python Visualization</li>
+                <li data-slide="21">Python Visualization</li>
+                <li data-slide="22">Sales by Category Bar Chart</li>
+                <li data-slide="23">Sales by Month Line Chart</li>
+                <li data-slide="24">Sales by Region Bar Chart</li>
+                <li data-slide="25">Sales by Category Pie Chart</li>
+                <li data-slide="26">Top 10 Sub-Categories Bar Chart</li>
+                <li data-slide="27">Top 10 Cities Bar Chart</li>
+                
+                <!-- Tableau Section -->
+                <li class="section-header">Tableau Visualization</li>
+                <li data-slide="28">Tableau</li>
+                <li data-slide="29">Tableau Dashboard Overview</li>
+                
+                <!-- Power BI Section -->
+                <li class="section-header">Power BI Dashboards</li>
+                <li data-slide="30">Power BI</li>
+                <li data-slide="31">Power BI Overview</li>
+                <li data-slide="32">Power BI Sales Insights</li>
+                <li data-slide="33">Power BI Customer Analysis</li>
+                <li data-slide="34">Power BI Regional Performance</li>
+                <li data-slide="35">Power BI Product Analysis</li>
+                
+                <li data-slide="36">Key Findings</li>
+                <li data-slide="37">Recommendations</li>
+                <li data-slide="38">Thank You</li>
+            </ul>
+        </div>
+
+        <!-- Menu Toggle Button -->
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+
+        <!-- Slide Navigation Controls -->
+        <div class="controls">
+            <button id="prev-slide" aria-label="Previous slide"><span>❮</span></button>
+            <span id="slide-counter">1 / 41</span>
+            <button id="next-slide" aria-label="Next slide"><span>❯</span></button>
+        </div>
+
+        <!-- Slides Container -->
+        <div class="slides-container">
+            <!-- Title Slide -->
+            <div class="slide active" id="slide-1">
+                <div class="slide-content cover">
+                    <h1>Data Analysis Project</h1>
+                    <p class="subtitle">A comprehensive analysis using Python, SQL, and Excel</p>
+                </div>
+            </div>
+
+            <!-- Team Members Slide -->
+            <div class="slide" id="slide-2">
+                <div class="slide-content">
+                    <h2>Our Team</h2>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="team-member-img">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="35" r="25" fill="#1e3a8a"/>
+                                    <circle cx="50" cy="100" r="40" fill="#1e3a8a"/>
+                                </svg>
+                            </div>
+                            <h3>Ahmed Osama</h3>
+                            <p>Python Cleaning</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-member-img">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="35" r="25" fill="#3b82f6"/>
+                                    <circle cx="50" cy="100" r="40" fill="#3b82f6"/>
+                                </svg>
+                            </div>
+                            <h3>Kerolos Fady</h3>
+                            <p>SQL Analysis</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-member-img">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="35" r="25" fill="#2563eb"/>
+                                    <circle cx="50" cy="100" r="40" fill="#2563eb"/>
+                                </svg>
+                            </div>
+                            <h3>Ahmed Amin</h3>
+                            <p>Excel Analysis</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-member-img">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="35" r="25" fill="#1d4ed8"/>
+                                    <circle cx="50" cy="100" r="40" fill="#1d4ed8"/>
+                                </svg>
+                            </div>
+                            <h3>Saif El-Din Ashraf</h3>
+                            <p>Python Visualization & Power BI</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-member-img">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="35" r="25" fill="#60a5fa"/>
+                                    <circle cx="50" cy="100" r="40" fill="#60a5fa"/>
+                                </svg>
+                            </div>
+                            <h3>Fayez Abdelmaksoud</h3>
+                            <p>Tableau & Power BI</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-member-img">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="35" r="25" fill="#93c5fd"/>
+                                    <circle cx="50" cy="100" r="40" fill="#93c5fd"/>
+                                </svg>
+                            </div>
+                            <h3>Eyad Mahmoud</h3>
+                            <p>Power BI</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-member-img">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="35" r="25" fill="#4f46e5"/>
+                                    <circle cx="50" cy="100" r="40" fill="#4f46e5"/>
+                                </svg>
+                            </div>
+                            <h3>Mohammed Elshazly</h3>
+                            <p>Power BI</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-member-img">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="35" r="25" fill="#818cf8"/>
+                                    <circle cx="50" cy="100" r="40" fill="#818cf8"/>
+                                </svg>
+                            </div>
+                            <h3>Mohammed Yasser</h3>
+                            <p>Power BI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Overview Slide -->
+            <div class="slide" id="slide-3">
+                <div class="slide-content">
+                    <h2>Project Overview</h2>
+                    <div class="overview-content">
+                        <p>This project demonstrates comprehensive data analysis using multiple technologies:</p>
+                        <ul class="overview-list">
+                            <li>Python data cleaning and preprocessing</li>
+                            <li>SQL database analysis and queries</li>
+                            <li>Excel data visualization and reporting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools We Use Slide -->
+            <div class="slide" id="slide-4">
+                <div class="slide-content">
+                    <h2>Tools We Use</h2>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <div class="tool-icon python-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            </div>
+                            <h3>Python</h3>
+                            <p>Data cleaning, transformation, and visualization using pandas, matplotlib, and seaborn</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon sql-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL">
+                            </div>
+                            <h3>SQL</h3>
+                            <p>Data querying, analysis, and relationship modeling</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon excel-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/excel/excel-original.svg" alt="Excel" onerror="this.src='https://img.icons8.com/color/96/000000/microsoft-excel-2019--v1.png'">
+                            </div>
+                            <h3>Excel</h3>
+                            <p>Spreadsheet analysis, pivot tables, and data management</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon tableau-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg" alt="Tableau" onerror="this.src='https://img.icons8.com/color/96/000000/tableau-software.png'">
+                            </div>
+                            <h3>Tableau</h3>
+                            <p>Interactive data visualization and business intelligence</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon powerbi-icon">
+                                <img src="https://img.icons8.com/color/96/000000/power-bi.png" alt="Power BI">
+                            </div>
+                            <h3>Power BI</h3>
+                            <p>Business analytics and dashboard creation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Objectives Slide -->
+            <div class="slide" id="slide-5">
+                <div class="slide-content">
+                    <h2>Project Objectives</h2>
+                    <div class="objectives-container">
+                        <div class="objective-section">
+                            <h3>1. Sales Analysis</h3>
+                            <ul>
+                                <li>What is the total sales amount by region, state, and city?</li>
+                                <li>Which products, categories, and sub-categories are the top performers in terms of sales?</li>
+                                <li>What are the seasonal sales trends, and when do sales peak or drop throughout the year?</li>
+                                <li>What is the total and average sales volume over the entire period?</li>
+                                <li>How much revenue is generated by each product category and sub-category?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="objective-section">
+                            <h3>2. Customer Segmentation</h3>
+                            <ul>
+                                <li>Who are our customers when segmented by type (Consumer, Corporate, Home Office)?</li>
+                                <li>What are the purchasing behaviors and preferences of each customer segment?</li>
+                                <li>How frequently does each customer segment make purchases on average?</li>
+                                <li>Which customer segment contributes the most to overall revenue and profit?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="objective-section">
+                            <h3>3. Product Performance</h3>
+                            <ul>
+                                <li>How many products are sold over time (year, month, day)?</li>
+                                <li>Which product categories generate the most sales over time?</li>
+                                <li>What is the total number of products sold?</li>
+                                <li>What is the average order frequency across all products?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Cleaning Section Slide -->
+            <div class="slide" id="slide-6">
+                <div class="slide-content section-divider">
+                    <h2>Python Cleaning</h2>
+                    <div class="section-description">
+                        <p>Data cleaning and preparation using Python libraries and techniques</p>
+                        <ul>
+                            <li>Loading and exploring the dataset</li>
+                            <li>Formatting date columns for analysis</li>
+                            <li>Creating derived variables and transforming data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python: Load and Explore Dataset Slide -->
+            <div class="slide" id="slide-7">
+                <div class="slide-content">
+                    <h2>Python: Load and Explore Dataset</h2>
+                    <div class="cleaning-steps">
+                        <pre><code class="python-code">import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv('Superstore Sales Dataset.csv')
+df.head()</code></pre>
+                        <div class="dataframe-output">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Row ID</th>
+                                        <th>Order ID</th>
+                                        <th>Order Date</th>
+                                        <th>Ship Date</th>
+                                        <th>Ship Mode</th>
+                                        <th>Customer ID</th>
+                                        <th>Customer Name</th>
+                                        <th>Segment</th>
+                                        <th>Country</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Postal Code</th>
+                                        <th>Region</th>
+                                        <th>Product ID</th>
+                                        <th>Category</th>
+                                        <th>Sub-Category</th>
+                                        <th>Product Name</th>
+                                        <th>Sales</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>CA-2017-152156</td>
+                                        <td>08/11/2017</td>
+                                        <td>11/11/2017</td>
+                                        <td>Second Class</td>
+                                        <td>CG-12520</td>
+                                        <td>Claire Gute</td>
+                                        <td>Consumer</td>
+                                        <td>United States</td>
+                                        <td>Henderson</td>
+                                        <td>Kentucky</td>
+                                        <td>42420.0</td>
+                                        <td>South</td>
+                                        <td>FUR-BO-10001798</td>
+                                        <td>Furniture</td>
+                                        <td>Bookcases</td>
+                                        <td>Bush Somerset Collection Bookcase</td>
+                                        <td>261.9600</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>CA-2017-152156</td>
+                                        <td>08/11/2017</td>
+                                        <td>11/11/2017</td>
+                                        <td>Second Class</td>
+                                        <td>CG-12520</td>
+                                        <td>Claire Gute</td>
+                                        <td>Consumer</td>
+                                        <td>United States</td>
+                                        <td>Henderson</td>
+                                        <td>Kentucky</td>
+                                        <td>42420.0</td>
+                                        <td>South</td>
+                                        <td>FUR-CH-10000454</td>
+                                        <td>Furniture</td>
+                                        <td>Chairs</td>
+                                        <td>Hon Deluxe Fabric Upholstered Stacking Chairs</td>
+                                        <td>731.9400</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>CA-2017-138688</td>
+                                        <td>12/06/2017</td>
+                                        <td>16/06/2017</td>
+                                        <td>Second Class</td>
+                                        <td>DV-13045</td>
+                                        <td>Darrin Van Huff</td>
+                                        <td>Corporate</td>
+                                        <td>United States</td>
+                                        <td>Los Angeles</td>
+                                        <td>California</td>
+                                        <td>90036.0</td>
+                                        <td>West</td>
+                                        <td>OFF-LA-10000240</td>
+                                        <td>Office Supplies</td>
+                                        <td>Labels</td>
+                                        <td>Self-Adhesive Address Labels for Typewriters</td>
+                                        <td>14.6200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>US-2016-108966</td>
+                                        <td>11/10/2016</td>
+                                        <td>18/10/2016</td>
+                                        <td>Standard Class</td>
+                                        <td>SO-20335</td>
+                                        <td>Sean O'Donnell</td>
+                                        <td>Consumer</td>
+                                        <td>United States</td>
+                                        <td>Fort Lauderdale</td>
+                                        <td>Florida</td>
+                                        <td>33311.0</td>
+                                        <td>South</td>
+                                        <td>FUR-TA-10000577</td>
+                                        <td>Furniture</td>
+                                        <td>Tables</td>
+                                        <td>Bretford CR4500 Series Slim Rectangular Table</td>
+                                        <td>957.5775</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>US-2016-108966</td>
+                                        <td>11/10/2016</td>
+                                        <td>18/10/2016</td>
+                                        <td>Standard Class</td>
+                                        <td>SO-20335</td>
+                                        <td>Sean O'Donnell</td>
+                                        <td>Consumer</td>
+                                        <td>United States</td>
+                                        <td>Fort Lauderdale</td>
+                                        <td>Florida</td>
+                                        <td>33311.0</td>
+                                        <td>South</td>
+                                        <td>OFF-ST-10000760</td>
+                                        <td>Office Supplies</td>
+                                        <td>Storage</td>
+                                        <td>Eldon Fold 'N Roll Cart System</td>
+                                        <td>22.3680</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Python: Format Date Columns Slide -->
+            <div class="slide" id="slide-8">
+                <div class="slide-content">
+                    <h2>Python: Format Date Columns</h2>
+                    <div class="cleaning-steps">
+                        <pre><code class="python-code">df['Order Date'] = pd.to_datetime(df['Order Date'], dayfirst=True)
+df['Ship Date'] = pd.to_datetime(df['Ship Date'], dayfirst=True)
+
+df['Duration Time'] = (df['Ship Date'] - df['Order Date']).dt.days
+df.head()</code></pre>
+                        <div class="dataframe-output">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Row ID</th>
+                                        <th>Order ID</th>
+                                        <th>Order Date</th>
+                                        <th>Ship Date</th>
+                                        <th>Ship Mode</th>
+                                        <th>Customer ID</th>
+                                        <th>Customer Name</th>
+                                        <th>Segment</th>
+                                        <th>Country</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Postal Code</th>
+                                        <th>Region</th>
+                                        <th>Product ID</th>
+                                        <th>Category</th>
+                                        <th>Sub-Category</th>
+                                        <th>Product Name</th>
+                                        <th>Sales</th>
+                                        <th>Duration Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>CA-2017-152156</td>
+                                        <td>2017-08-11</td>
+                                        <td>2017-11-11</td>
+                                        <td>Second Class</td>
+                                        <td>CG-12520</td>
+                                        <td>Claire Gute</td>
+                                        <td>Consumer</td>
+                                        <td>United States</td>
+                                        <td>Henderson</td>
+                                        <td>Kentucky</td>
+                                        <td>42420.0</td>
+                                        <td>South</td>
+                                        <td>FUR-BO-10001798</td>
+                                        <td>Furniture</td>
+                                        <td>Bookcases</td>
+                                        <td>Bush Somerset Collection Bookcase</td>
+                                        <td>261.9600</td>
+                                        <td>92.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>CA-2017-152156</td>
+                                        <td>2017-08-11</td>
+                                        <td>2017-11-11</td>
+                                        <td>Second Class</td>
+                                        <td>CG-12520</td>
+                                        <td>Claire Gute</td>
+                                        <td>Consumer</td>
+                                        <td>United States</td>
+                                        <td>Henderson</td>
+                                        <td>Kentucky</td>
+                                        <td>42420.0</td>
+                                        <td>South</td>
+                                        <td>FUR-CH-10000454</td>
+                                        <td>Furniture</td>
+                                        <td>Chairs</td>
+                                        <td>Hon Deluxe Fabric Upholstered Stacking Chairs</td>
+                                        <td>731.9400</td>
+                                        <td>92.0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Data Transformation Slide -->
+            <div class="slide" id="slide-9">
+                <div class="slide-content">
+                    <h2>Python Data Transformation</h2>
+                    <pre><code class="python-code">order_counts = df.groupby('Customer ID')['Order ID'].nunique().reset_index()
+order_counts.columns = ['Customer ID', 'Order Frequency']
+df = df.merge(order_counts, on='Customer ID', how='left')
+
+q_low = df['Sales'].quantile(0.33)
+q_high = df['Sales'].quantile(0.66)
+
+def categorize_sales(sale):
+    if sale <= q_low:
+        return 'Low'
+    elif sale <= q_high:
+        return 'Medium'
+    else:
+        return 'High'
+
+df['Sales Category'] = df['Sales'].apply(categorize_sales)
+
+df</code></pre>
+                    
+                    <div class="dataframe-output">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Row ID</th>
+                                    <th>Order ID</th>
+                                    <th>Order Date</th>
+                                    <th>Ship Date</th>
+                                    <th>Ship Mode</th>
+                                    <th>Customer ID</th>
+                                    <th>Customer Name</th>
+                                    <th>Segment</th>
+                                    <th>Country</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Postal Code</th>
+                                    <th>Region</th>
+                                    <th>Product ID</th>
+                                    <th>Category</th>
+                                    <th>Sub-Category</th>
+                                    <th>Product Name</th>
+                                    <th>Sales</th>
+                                    <th>Order Frequency</th>
+                                    <th>Sales Category</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>CA-2017-152156</td>
+                                    <td>08/11/2017</td>
+                                    <td>2017-11-11</td>
+                                    <td>Second Class</td>
+                                    <td>CG-12520</td>
+                                    <td>Claire Gute</td>
+                                    <td>Consumer</td>
+                                    <td>United States</td>
+                                    <td>Henderson</td>
+                                    <td>Kentucky</td>
+                                    <td>42420.0</td>
+                                    <td>South</td>
+                                    <td>FUR-BO-10001798</td>
+                                    <td>Furniture</td>
+                                    <td>Bookcases</td>
+                                    <td>Bush Somerset Collection Bookcase</td>
+                                    <td>261.96</td>
+                                    <td>3</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>CA-2017-152156</td>
+                                    <td>08/11/2017</td>
+                                    <td>2017-11-11</td>
+                                    <td>Second Class</td>
+                                    <td>CG-12520</td>
+                                    <td>Claire Gute</td>
+                                    <td>Consumer</td>
+                                    <td>United States</td>
+                                    <td>Henderson</td>
+                                    <td>Kentucky</td>
+                                    <td>42420.0</td>
+                                    <td>South</td>
+                                    <td>FUR-CH-10000454</td>
+                                    <td>Furniture</td>
+                                    <td>Chairs</td>
+                                    <td>Hon Deluxe Fabric Upholstered Stacking Chairs</td>
+                                    <td>731.94</td>
+                                    <td>3</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>CA-2017-138688</td>
+                                    <td>12/06/2017</td>
+                                    <td>2017-06-16</td>
+                                    <td>Second Class</td>
+                                    <td>DV-13045</td>
+                                    <td>Darrin Van Huff</td>
+                                    <td>Corporate</td>
+                                    <td>United States</td>
+                                    <td>Los Angeles</td>
+                                    <td>California</td>
+                                    <td>90036.0</td>
+                                    <td>West</td>
+                                    <td>OFF-LA-10000240</td>
+                                    <td>Office Supplies</td>
+                                    <td>Labels</td>
+                                    <td>Self-Adhesive Address Labels for Typewriters</td>
+                                    <td>14.62</td>
+                                    <td>5</td>
+                                    <td>Low</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>US-2016-108966</td>
+                                    <td>11/10/2016</td>
+                                    <td>2016-10-18</td>
+                                    <td>Standard Class</td>
+                                    <td>SO-20335</td>
+                                    <td>Sean O'Donnell</td>
+                                    <td>Consumer</td>
+                                    <td>United States</td>
+                                    <td>Fort Lauderdale</td>
+                                    <td>Florida</td>
+                                    <td>33311.0</td>
+                                    <td>South</td>
+                                    <td>FUR-TA-10000577</td>
+                                    <td>Furniture</td>
+                                    <td>Tables</td>
+                                    <td>Bretford CR4500 Series Slim Rectangular Table</td>
+                                    <td>957.58</td>
+                                    <td>6</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>US-2016-108966</td>
+                                    <td>11/10/2016</td>
+                                    <td>2016-10-18</td>
+                                    <td>Standard Class</td>
+                                    <td>SO-20335</td>
+                                    <td>Sean O'Donnell</td>
+                                    <td>Consumer</td>
+                                    <td>United States</td>
+                                    <td>Fort Lauderdale</td>
+                                    <td>Florida</td>
+                                    <td>33311.0</td>
+                                    <td>South</td>
+                                    <td>OFF-ST-10000760</td>
+                                    <td>Office Supplies</td>
+                                    <td>Storage</td>
+                                    <td>Eldon Fold 'N Roll Cart System</td>
+                                    <td>22.37</td>
+                                    <td>6</td>
+                                    <td>Low</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Analysis Section Slide -->
+            <div class="slide" id="slide-10">
+                <div class="slide-content section-divider">
+                    <h2>SQL Analysis</h2>
+                    <div class="section-description">
+                        <p>Database exploration and analysis using SQL queries</p>
+                        <ul>
+                            <li>Data validation and integrity checks</li>
+                            <li>Sales performance analysis by region and product</li>
+                            <li>Seasonal analysis and trend identification</li>
+                            <li>Product performance metrics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Introduction Slide -->
+            <div class="slide" id="slide-11">
+                <div class="slide-content">
+                    <h2>SQL Analysis</h2>
+                    <div class="slide-columns">
+                        <div class="column">
+                            <p>Database setup</p>
+                            <pre><code>
+-- Database setup
+create database f_project 
+use f_project
+
+-- Initial data check
+select * from [Final-project by Excel]
+                            </code></pre>
+                        </div>
+                        <div class="column code-preview">
+                            <pre><code>
+--Check Nulls
+SELECT COUNT(*) AS NO_of_Nulls
+FROM [Final-project by Excel]
+WHERE Customer ID IS NULL OR Order ID IS NULL
+
+                    </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Query: Check Nulls Slide -->
+            <div class="slide" id="slide-12">
+                <div class="slide-content">
+                    <h2>SQL Query: Check Nulls</h2>
+                    <pre><code class="sql-code">
+--Check Nulls
+SELECT COUNT(*) AS NO_of_Nulls
+FROM [Final-project by Excel]
+WHERE Customer ID IS NULL OR Order ID IS NULL
+
+                    </code></pre>
+                    <div class="sql-query-image-item">
+                        <img src="SQL/SQL Analysis/Check Nulls.jpg" alt="Check Nulls Query Results" />
+                        <div class="caption">Checking for NULL Values in Dataset</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Query: Duplicates Slide -->
+            <div class="slide" id="slide-13">
+                <div class="slide-content">
+                    <h2>SQL Query: Duplicates</h2>
+                    <pre><code class="sql-code">
+--Duplicates
+SELECT Order_ID, Customer_ID, Product_ID, sales, sub_category, COUNT(*) AS DuplicateCount
+FROM [Final-project by Excel]
+GROUP BY Order ID, Customer_ID, Product_ID, Sales, sub_category
+HAVING COUNT(*) > 1;
+                    </code></pre>
+                    <div class="sql-query-image-item">
+                        <img src="SQL/SQL Analysis/Duplicats.jpg" alt="Duplicates Query Results" />
+                        <div class="caption">Checking for Duplicate Records</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Query: Sales by Region Slide -->
+            <div class="slide" id="slide-14">
+                <div class="slide-content">
+                    <h2>SQL Query: Sales by Region</h2>
+                    <pre><code class="sql-code">
+SELECT city, state, Region, sum(sales) AS Total_Sales
+FROM [Final-project by Excel] 
+GROUP BY city, state, Region
+ORDER BY Total_Sales DESC;
+                    </code></pre>
+                    <div class="sql-query-image-item">
+                        <img src="SQL/SQL Analysis/Total Sales By Region City State.jpg" alt="Total Sales By Region City State" />
+                        <div class="caption">Total Sales By Region, City, and State</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Query: Top Product Slide -->
+            <div class="slide" id="slide-15">
+                <div class="slide-content">
+                    <h2>SQL Query: Top Performing Product</h2>
+                    <pre><code class="sql-code">
+SELECT TOP 1 product_name, COUNT(product_id) AS top_product
+FROM [Final-project by Excel]
+GROUP BY product_name
+ORDER BY top_product DESC;
+                    </code></pre>
+                    <div class="sql-query-image-item">
+                        <img src="SQL/SQL Analysis/Top Performing Product.jpg" alt="Top Performing Product" />
+                        <div class="caption">Top Performing Product</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Query: Seasonal Sales Slide -->
+            <div class="slide" id="slide-16">
+                <div class="slide-content">
+                    <h2>SQL Query: Seasonal Sales Patterns</h2>
+                    <pre><code class="sql-code">
+SELECT season_of_order, round(sum(sales),2) AS Total_Sales
+FROM [Final-project by Excel]
+GROUP BY season_of_order
+ORDER BY Total_Sales DESC;
+                    </code></pre>
+                    <div class="sql-query-image-item">
+                        <img src="SQL/SQL Analysis/Which Season Have The highst Sales.jpg" alt="Which Season Has The Highest Sales" />
+                        <div class="caption">Which Season Has The Highest Sales</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Query: Which Category is Performing Slide -->
+            <div class="slide" id="slide-17">
+                <div class="slide-content">
+                    <h2>SQL Query: Which Category is Performing</h2>
+                    <pre><code class="sql-code">
+-- Which category is top-performing?
+SELECT TOP 1 category, COUNT(category) AS top_Category
+FROM [Final-project by Excel]
+GROUP BY category
+ORDER BY top_Category DESC;
+                    </code></pre>
+                    <div class="sql-query-image-item">
+                        <img src="SQL/SQL Analysis/Which Catigory is Performing.jpg" alt="Which Category is Performing" />
+                        <div class="caption">Which Category is Performing</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Query: Which Sub-Category is Performing Slide -->
+            <div class="slide" id="slide-18">
+                <div class="slide-content">
+                    <h2>SQL Query: Which Sub-Category is Performing</h2>
+                    <pre><code class="sql-code">
+-- Which sub_category is top-performing?
+SELECT TOP 1 sub_category, COUNT(sub_category) AS top_SubCategory
+FROM [Final-project by Excel]
+GROUP BY sub_category
+ORDER BY top_SubCategory DESC;
+                    </code></pre>
+                    <div class="sql-query-image-item">
+                        <img src="SQL/SQL Analysis/Which Sub-Catigory is Performing.jpg" alt="Which Sub-Category is Performing" />
+                        <div class="caption">Which Sub-Category is Performing</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Query: Least Selling Product Slide -->
+            <div class="slide" id="slide-19">
+                <div class="slide-content">
+                    <h2>SQL Query: Least Selling Product</h2>
+                    <pre><code class="sql-code">
+SELECT TOP 1 Product_Name, SUM(sales) AS TotalSales
+FROM [Total project by Excel]
+GROUP BY Product_Name
+ORDER BY TotalSales ASC;
+                    </code></pre>
+                    <div class="sql-query-image-item">
+                        <img src="SQL/SQL Analysis/Least Selling Product.jpg" alt="Least Selling Product" />
+                        <div class="caption">Least Selling Product</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Excel Analysis Section Slide -->
+            <div class="slide" id="slide-20">
+                <div class="slide-content section-divider">
+                    <h2>Excel Analysis</h2>
+                    <div class="section-description">
+                        <p>Spreadsheet analysis and data exploration using Microsoft Excel</p>
+                        <ul>
+                            <li>Data formatting and structure preparation</li>
+                            <li>Pivot tables for aggregation and summarization</li>
+                            <li>Formulas and calculations for derived metrics</li>
+                            <li>Trend analysis and reporting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Excel Data Slide -->
+            <div class="slide" id="slide-21">
+                <div class="slide-content">
+                    <h2>Excel Data Analysis</h2>
+                    <p>Our analysis was conducted using the comprehensive Superstore dataset:</p>
+                    <div class="excel-analysis-container">
+                        <div class="excel-file-info">
+                            <h3>Dataset Used:</h3>
+                            <ul>
+                                <li><strong>File:</strong> Final_excel_project.xlsx</li>
+                                <li><strong>Records:</strong> 9,800+ transactions</li>
+                                <li><strong>Time Period:</strong> 2015-2018</li>
+                            </ul>
+                        </div>
+                        <iframe src="https://docs.google.com/spreadsheets/d/1K0xa9sNbhuT3znE8afxZKjSVss0AnIJM/edit?usp=sharing&ouid=102587431672500867838&rtpof=true&sd=true" width="100%" height="600"></iframe>
+                        <div class="excel-analysis-methods">
+                            <h3>Analysis Techniques Used:</h3>
+                            <ul>
+                                <li>Change date type from text to date</li>
+                                <li>Add column (order to ship duration by substract ship date from order date)</li>
+                                <li> Adding columns for (Year of order, Month of order, Day of order, and season of order)</li>
+                                <li>Ordering customers by count of orders (high value customers)</li>
+                                <li>Using Pivot Tables</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Visualization Section Slide -->
+            <div class="slide" id="slide-22">
+                <div class="slide-content section-divider">
+                    <h2>Python Visualization</h2>
+                    <div class="section-description">
+                        <p>Data visualization using Python libraries like Matplotlib and Seaborn</p>
+                        <ul>
+                            <li>Bar charts for categorical comparisons</li>
+                            <li>Line charts for time series analysis</li>
+                            <li>Pie charts for composition visualization</li>
+                            <li>Strategic insights through graphical representation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Visualization: Sales by Category Bar Chart -->
+            <div class="slide" id="slide-23">
+                <div class="slide-content">
+                    <h2>Sales by Category Bar Chart</h2>
+                    <div class="visualization-section">
+                        <h3>Code:</h3>
+                        <pre><code class="python-code">sns.barplot(data=df, x='Category', y='Sales', estimator='sum', ci=None)
+plt.title('Total Sales by Category')
+plt.ylabel('Total Sales')
+plt.xlabel('Category')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()</code></pre>
+                        
+                        <h3>Output:</h3>
+                        <div class="visualization-result">
+                            <img src="Python Visualizing/images/Total Sales by Category.png" alt="Bar Chart: Total Sales by Category" class="visualization-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Visualization: Sales by Month Line Chart -->
+            <div class="slide" id="slide-24">
+                <div class="slide-content">
+                    <h2>Sales by Month Line Chart</h2>
+                    <div class="visualization-section">
+                        <h3>Code:</h3>
+                        <pre><code class="python-code">
+sales_by_month = df.groupby('Order Month Name')['Sales'].sum()
+
+month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+sales_by_month = sales_by_month[month_order]
+
+plt.figure(figsize=(12, 6))  # Adjust the size as needed
+plt.plot(sales_by_month.index, sales_by_month, marker='o', color='g', linestyle='-', linewidth=2)
+plt.title('Sales by Order Month')
+plt.xlabel('Order Month')
+plt.ylabel('Total Sales')
+plt.tight_layout()
+plt.show()</code></pre>
+                        
+                        <h3>Output:</h3>
+                        <div class="visualization-result">
+                            <img src="Python Visualizing/images/sales_by_month.png" alt="Line Chart: Sales by Order Month" class="visualization-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Visualization: Sales by Region Bar Chart -->
+            <div class="slide" id="slide-25">
+                <div class="slide-content">
+                    <h2>Sales by Region Bar Chart</h2>
+                    <div class="visualization-section">
+                        <h3>Code:</h3>
+                        <pre><code class="python-code">plt.figure(figsize=(8, 5))
+sns.barplot(data=df, x='Region', y='Sales', estimator='sum', ci=None, palette='muted')
+plt.title('Total Sales by Region')
+plt.xlabel('Region')
+plt.ylabel('Sales')
+plt.xticks(rotation=45)
+plt.show()</code></pre>
+                        
+                        <h3>Output:</h3>
+                        <div class="visualization-result">
+                            <img src="Python Visualizing/images/Total Sales by Region.png" alt="Bar Chart: Total Sales by Region" class="visualization-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Visualization: Sales by Category Pie Chart -->
+            <div class="slide" id="slide-26">
+                <div class="slide-content">
+                    <h2>Sales by Category Pie Chart</h2>
+                    <div class="visualization-section">
+                        <h3>Code:</h3>
+                        <pre><code class="python-code">category_sales = df.groupby('Category')['Sales'].sum()
+
+plt.figure(figsize=(8, 8))
+plt.pie(category_sales.values, labels=category_sales.index, colors=['skyblue', 'lightgreen', 'salmon'], autopct='%1.1f%%')
+plt.title('Total Sales by Category')
+plt.show()</code></pre>
+                        
+                        <h3>Output:</h3>
+                        <div class="visualization-result">
+                            <img src="Python Visualizing/images/Total Sales by Category Pie Chart.png" alt="Pie Chart: Total Sales by Category" class="visualization-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Visualization: Top 10 Sub-Categories Bar Chart -->
+            <div class="slide" id="slide-27">
+                <div class="slide-content">
+                    <h2>Top 10 Sub-Categories Bar Chart</h2>
+                    <div class="visualization-section">
+                        <h3>Code:</h3>
+                        <pre><code class="python-code">top_subcategories = df.groupby('Sub-Category')['Sales'].sum().nlargest(10).iloc[::-1]
+
+plt.figure(figsize=(10, 6))
+plt.barh(top_subcategories.index, top_subcategories.values, color='purple')
+plt.title('Top 10 Sub-Categories by Sales')
+plt.xlabel('Sales')
+plt.ylabel('Sub-Category')
+plt.show()</code></pre>
+                        
+                        <h3>Output:</h3>
+                        <div class="visualization-result">
+                            <img src="Python Visualizing/images/Top 10 Sub-Categories by Sales.png" alt="Horizontal Bar Chart: Top 10 Sub-Categories by Sales" class="visualization-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Visualization: Top 10 Cities Bar Chart -->
+            <div class="slide" id="slide-28">
+                <div class="slide-content">
+                    <h2>Top 10 Cities Bar Chart</h2>
+                    <div class="visualization-section">
+                        <h3>Code:</h3>
+                        <pre><code class="python-code">top_cities = df.groupby('City', as_index=False)['Sales'].sum().nlargest(10, 'Sales')
+
+
+top_cities = top_cities.sort_values('Sales', ascending=False)
+
+plt.figure(figsize=(10, 6))
+sns.barplot(data=top_cities, x='Sales', y='City', palette='magma')
+plt.title('Top 10 Cities by Sales')
+plt.xlabel('Sales')
+plt.ylabel('City')
+plt.show()</code></pre>
+                        
+                        <h3>Output:</h3>
+                        <div class="visualization-result">
+                            <img src="Python Visualizing/images/Top 10 Cities by Sales.png" alt="Bar Chart: Top 10 Cities by Sales" class="visualization-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tableau Section Slide -->
+            <div class="slide" id="slide-29">
+                <div class="slide-content section-divider">
+                    <h2>Tableau</h2>
+                    <div class="section-description">
+                        <p>Interactive data visualization and business intelligence using Tableau</p>
+                        <ul>
+                            <li>Dynamic dashboards for comprehensive sales analysis</li>
+                            <li>Interactive filters and drill-down capabilities</li>
+                            <li>Geographic mapping and spatial analysis</li>
+                            <li>Multi-dimensional data exploration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tableau Section Slides -->
+            <div class="slide" id="slide-30">
+                <div class="slide-content">
+                    <h2>Tableau Dashboard Overview</h2>
+                    <div class="tableau-content">
+                        <div class="tableau-image">
+                            <img src="Tableau/WhatsApp Image 2025-05-06 at 04.04.17_c5eca028.jpg" alt="Tableau Dashboard Overview">
+                        </div>
+                        <div class="tableau-description">
+                            <p>Our Tableau dashboard provides a comprehensive view of the sales data with interactive visualizations and filters.</p>
+                            <ul>
+                                <li>Interactive filters for date, region, and product categories</li>
+                                <li>Real-time updates when selections change</li>
+                                <li>Drill-down functionality for detailed analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <!-- Power BI Section Slide -->
+            <div class="slide" id="slide-33">
+                <div class="slide-content section-divider">
+                    <h2>Power BI</h2>
+                    <div class="section-description">
+                        <p>Business analytics and data visualization using Microsoft Power BI</p>
+                        <ul>
+                            <li>Interactive business intelligence dashboards</li>
+                            <li>KPI tracking and performance monitoring</li>
+                            <li>Multi-dimensional data modeling</li>
+                            <li>Cross-filtering and dynamic reporting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Power BI Section Slides -->
+            <div class="slide" id="slide-34">
+                <div class="slide-content">
+                    <h2>Power BI Overview</h2>
+                    <div class="powerbi-content">
+                        <div class="powerbi-image">
+                            <img src="Power BI/Home Page.png" alt="Power BI Dashboard Overview">
+                        </div>
+                        <div class="powerbi-description">
+                            <p>Our Power BI dashboards provide dynamic and interactive views of our data analysis.</p>
+                            <ul>
+                                <li>Comprehensive KPI tracking across all business dimensions</li>
+                                <li>Interactive slicers for data filtering</li>
+                                <li>Custom visualizations for complex data relationships</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" id="slide-35">
+                <div class="slide-content">
+                    <h2>Power BI Sales Insights</h2>
+                    <div class="powerbi-content">
+                        <div class="powerbi-image">
+                            <img src="Power BI/Power BI Sales Insights.png""Power BI/Screenshot (553).png" alt="Power BI Sales Insights">
+                        </div>
+                        <div class="powerbi-description">
+                            <p>Our sales insights dashboard presents a detailed view of sales performance metrics.</p>
+                            <ul>
+                                <li>Sales trend analysis with forecasting</li>
+                                <li>Product performance comparison charts</li>
+                                <li>Sales funnel visualization for conversion analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" id="slide-36">
+                <div class="slide-content">
+                    <h2>Power BI Customer Analysis</h2>
+                    <div class="powerbi-content">
+                        <div class="powerbi-image">
+                            <img src="Power BI/Power BI Customer Analysis.png" alt="Power BI Customer Analysis">
+                        </div>
+                        <div class="powerbi-description">
+                            <p>Our customer analysis dashboard provides deep insights into customer behavior and segmentation.</p>
+                            <ul>
+                                <li>Customer segmentation by purchasing behavior</li>
+                                <li>Customer lifetime value analysis</li>
+                                <li>Demographic breakdown of customer base</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <!-- Additional Power BI Slides -->
+            <div class="slide" id="slide-37">
+                <div class="slide-content">
+                    <h2>Power BI Product Analysis</h2>
+                    <div class="powerbi-content">
+                        <div class="powerbi-image">
+                            <img src="Power BI/Power BI ProductPerformance.png" alt="Power BI Regional Analysis">
+                        </div>
+                        <div class="powerbi-description">
+                            <p>Our regional analysis dashboard highlights geographical sales patterns and opportunities.</p>
+                            <ul>
+                                <li>Geographic distribution of sales performance</li>
+                                <li>Regional trend analysis and comparisons</li>
+                                <li>Location-based customer insights</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slide" id="slide-38">
+                <div class="slide-content">
+                    <h2>Power BI Summary</h2>
+                    <div class="powerbi-content">
+                        <div class="powerbi-image">
+                            <img src="Power BI/Summary.png" alt="Power BI summary">
+                        </div>
+                        <div class="powerbi-description">
+                            <p>Our performance metrics dashboard presents detailed insights on key business indicators.</p>
+                            <ul>
+                                <li>Sales and profit trend visualization</li>
+                                <li>Category and product performance tracking</li>
+                                <li>Comparative analysis across time periods</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Findings Slide -->
+            <div class="slide" id="slide-39">
+                <div class="slide-content">
+                    <h2>Key Findings</h2>
+                    <div class="findings-grid">
+                        <div class="finding-card">
+                            <h3>Sales by Category</h3>
+                            <p>Office Supplies leads in sales volume, followed by Furniture and Technology.</p>
+                        </div>
+                        <div class="finding-card">
+                            <h3>Regional Performance</h3>
+                            <p>The West region contributes the highest revenue, followed by East, Central, and South.</p>
+                        </div>
+                        <div class="finding-card">
+                            <h3>Customer Segments</h3>
+                            <p>Consumer segment has the highest order volume, though Corporate generates more revenue per order.</p>
+                        </div>
+                        <div class="finding-card">
+                            <h3>Seasonal Trends</h3>
+                            <p>Q4 shows consistently higher sales across all product categories, likely due to holiday shopping.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Recommendations Slide -->
+            <div class="slide" id="slide-40">
+                <div class="slide-content">
+                    <h2>Recommendations</h2>
+                    <div class="recommendations-container">
+                        <div class="recommendation-item">
+                            <h3>1. Focus on Office Supplies</h3>
+                            <p>Invest more in marketing and expanding the Office Supplies category, which shows the highest sales volume.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h3>2. Prioritize West Region</h3>
+                            <p>Allocate more resources to the West region, which shows the highest revenue generation.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h3>3. Seasonal Strategy</h3>
+                            <p>Develop specific seasonal promotional strategies for Q4, when sales peak across all categories.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h3>4. Corporate Customer Focus</h3>
+                            <p>Create targeted loyalty programs for corporate customers who generate higher revenue per order.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h3>5. Product Line Expansion</h3>
+                            <p>Consider expanding the top-performing sub-categories to capture more market share.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h3>6. Optimize Shipping</h3>
+                            <p>Review shipping processes to reduce the delivery time gap and improve customer satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thank You Slide -->
+            <div class="slide" id="slide-41">
+                <div class="slide-content cover">
+                    <h2>Thank You</h2>
+                    <p class="subtitle">Any questions?</p>
+                    <div class="downloads">
+                        <p>Download the full analysis:</p>
+                        <div class="download-buttons">
+                            <a href="Excel/Final-project by Excel.csv" class="download-button" download>CSV Data</a>
+                            <a href="SQL/SQL Analysis.pdf" class="download-button" download>SQL Report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="slide-script.js"></script>
+</body>
+</html>
