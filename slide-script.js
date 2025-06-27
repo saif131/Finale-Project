@@ -6,22 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggleBtn = document.getElementById('menu-toggle');
     const closeMenuBtn = document.getElementById('close-menu');
     const slideNavMenu = document.querySelector('.slide-nav-menu');
-    const menuItems = document.querySelectorAll('.slide-nav-menu li');
+    const menuItems = document.querySelectorAll('.slide-nav-menu li');    let currentSlideIndex = 0;
     
-    // Modal elements
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeModal = document.querySelector('.modal-close');
+    // Array of actual slide IDs that exist (mapping navigation index to slide ID)
+    const slideIds = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,           // 0-9: slides 1-10
+        11, 12, 13, 14, 15, 16, 17, 18, 19, 20,  // 10-19: slides 11-20
+        21, 22, 23, 24, 25, 26, 27, 28, 29, 30,  // 20-29: slides 21-30
+        31, 32, 35, 36, 37, 38, 39, 40, 41       // 30-38: slides 31-32, then 35-41
+    ];
     
-    let currentSlideIndex = 0;
-    const totalSlides = 38;
+    const totalSlides = slideIds.length;
     
     // Update slide counter display
     function updateSlideCounter() {
         slideCounter.textContent = `${currentSlideIndex + 1} / ${totalSlides}`;
-    }
-    
-    // Show specific slide
+    }    // Show specific slide
     function showSlide(index) {
         // Handle out of bounds indices
         if (index < 0) {
@@ -35,8 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
             slide.classList.remove('active');
         });
         
-        // Show the current slide
-        slides[index].classList.add('active');
+        // Show the current slide using the mapped slide ID
+        const actualSlideId = slideIds[index];
+        const targetSlide = document.getElementById(`slide-${actualSlideId}`);
+        if (targetSlide) {
+            targetSlide.classList.add('active');
+        }
+        
         currentSlideIndex = index;
         
         // Update counter
@@ -45,8 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update active menu item
         menuItems.forEach(item => {
             item.classList.remove('active');
+            const slideNumber = item.getAttribute('data-slide');
+            if (slideNumber !== null && parseInt(slideNumber) === index) {
+                item.classList.add('active');
+            }
         });
-        menuItems[currentSlideIndex].classList.add('active');
     }
     
     // Navigate to previous slide
@@ -73,43 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
     menuToggleBtn.addEventListener('click', toggleMenu);
-    closeMenuBtn.addEventListener('click', closeMenu);
-    
-    // Add event listeners to menu items
-    menuItems.forEach((item, index) => {
+    closeMenuBtn.addEventListener('click', closeMenu);    // Add event listeners to menu items
+    menuItems.forEach((item) => {
         item.addEventListener('click', () => {
-            showSlide(index);
-            closeMenu();
+            const slideNumber = item.getAttribute('data-slide');
+            if (slideNumber !== null) {
+                showSlide(parseInt(slideNumber));
+                closeMenu();
+            }
+            // If it's a section header without data-slide, do nothing
         });
-    });
-    
-    // Make all images in slides clickable
-    const makeImagesClickable = () => {
-        // Find all images in slides (except for small icons)
-        const slidesImages = document.querySelectorAll('.visualization-image, .powerbi-image img, .tableau-image img, .sql-query-image-item img, .visualization-result img, .dataframe-output img, .finding-card img, .team-member-img img:not([width="100"]):not([height="100"])');
-        
-        slidesImages.forEach(img => {
-            // Add zoomable class to all images
-            img.classList.add('zoomable');
-            
-            // Add click event listener
-            img.addEventListener('click', function() {
-                modal.style.display = 'block';
-                modalImg.src = this.src;
-            });
-        });
-    };
-    
-    // Close modal when X is clicked
-    closeModal.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    // Close modal when clicking outside the image
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
     });
     
     // Arrow key navigation
@@ -127,12 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // End key goes to last slide
             showSlide(totalSlides - 1);
         } else if (event.key === 'Escape') {
-            // Escape key closes menu or modal
-            if (modal.style.display === 'block') {
-                modal.style.display = 'none';
-            } else {
-                closeMenu();
-            }
+            // Escape key closes menu
+            closeMenu();
         }
     });
     
@@ -171,10 +148,4 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize with the first slide
     showSlide(0);
-    
-    // Make images clickable after a short delay to ensure all content is loaded
-    setTimeout(makeImagesClickable, 1000);
-    
-    // Also make images clickable when the page fully loads
-    window.onload = makeImagesClickable;
 }); 
